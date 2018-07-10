@@ -2,6 +2,10 @@
 
 https://www.paradisetoken.co.uk
 
+## Licence
+
+Paradise Token is released under the terms of the MIT license.
+
 ## What is Paradise Token?
 
 Is standard ERC20 utility token on ethereum blockchain  executed by Smart Contract and Dapps on PDT Protocol.
