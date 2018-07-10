@@ -4,7 +4,7 @@ https://www.paradisetoken.co.uk
 
 ## Licence
 
-Paradise Token is released under the terms of the MIT license.
+Paradise Token is released under the terms of the MIT license. See COPYING for more information or see https://opensource.org/licenses/MIT.
 
 ## What is Paradise Token?
 
