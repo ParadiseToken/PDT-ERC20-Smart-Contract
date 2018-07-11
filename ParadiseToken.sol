@@ -301,7 +301,7 @@ contract ParadiseToken is StandardToken, Ownable {
     
     // Properties
     address public adminAddr;              // the number of tokens available for the administrator
-    address public tokenAllowanceAddr = 0x9A4518ad59ac1D0Fc9A77d9083f233cD0b8d77Fa; // the number of tokens available for crowdsales
+    address public tokenAllowanceAddr;     // the number of tokens available for crowdsale
     bool public transferEnabled = false;   // indicates if transferring tokens is enabled or not
     
     
@@ -420,7 +420,7 @@ contract ParadiseTokenSale is Pausable {
     using SafeMath for uint256;
 
     // The beneficiary is the future recipient of the funds
-    address public beneficiary = 0xF3664F69916bc3DeCcd9f37e31d8ecB8985F0BE7;
+    address public beneficiary;
 
     // The crowdsale has a funding goal, cap, deadline, and minimum contribution
     uint public fundingGoal = 1000 ether;   // Base on 680$ per ether
@@ -431,8 +431,8 @@ contract ParadiseTokenSale is Pausable {
     bool public saleClosed = false;
 
     // Time period of sale (UNIX timestamps)
-    uint public startTime = 1528735903; // Monday, June 11, 2018 04:51:43 PM UTC+0200 (CEST)
-    uint public endTime = 1531328203;  //  Wednesday, July 11, 2018 04:57:27 PM UTC+0200 (CEST)
+    uint public startTime; 
+    uint public endTime;  
 
     // Keeps track of the amount of wei raised
     uint public amountRaised;
