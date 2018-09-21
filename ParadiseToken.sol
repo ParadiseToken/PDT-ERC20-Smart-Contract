@@ -639,6 +639,34 @@ contract ParadiseTokenSale is Pausable {
     }
 }
 
+interface IERC20 {
+  function balanceOf(address _owner) external view returns (uint256);
+  function allowance(address _owner, address _spender) external view returns (uint256);
+  function transfer(address _to, uint256 _value) external returns (bool);
+  function transferFrom(address _from, address _to, uint256 _value) external returns (bool);
+  function approve(address _spender, uint256 _value) external returns (bool);
+  event Transfer(address indexed from, address indexed to, uint256 value);
+  event Approval(address indexed owner, address indexed spender, uint256 value);
+}
+
+/**
+ * @title ParadiseToken initial distribution
+ * @dev Distribute airdrop tokens
+ */
+ 
+contract PDTDistribution is Ownable {
+  function drop(IERC20 token, address[] recipients, uint256[] values) public {
+    for (uint256 i = 0; i < recipients.length; i++) {
+      token.transfer(recipients[i], values[i]);
+    }
+  }
+
+  modifier onlyOwner() {
+    require(msg.sender == owner);
+    _;
+  }
+}
+
 /*
  *（｀・P・）（｀・P・´）（・P・´）
  *     Created by Paradise
