@@ -440,7 +440,7 @@ contract ParadiseTokenSale is Pausable {
     // The ratio of PDT to Ether
     uint public rate;
     uint public constant LOW_RANGE_RATE = 15000;    // 0% bonus
-    uint public constant HIGH_RANGE_RATE = 30000;   // 100% bonus for 1 week
+    uint public constant HIGH_RANGE_RATE = 21000;   // 40% bonus for 1 week
     
     // The token being sold
     ParadiseToken public tokenReward;
