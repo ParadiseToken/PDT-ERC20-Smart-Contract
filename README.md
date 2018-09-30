@@ -9,7 +9,7 @@ Paradise Token is released under the terms of the MIT license. See [COPYING](htt
 ## What is Paradise Token?
 
 Is standard ERC20 utility token on ethereum blockchain  executed by Smart Contract and Dapps on PDT Protocol.
-PARADISE TOKEN is a Direct Global Hotel Booking Powered by Daaps.  No Middlemen. 0% Commission. No Advertising Fees.
+PARADISE TOKEN is a Direct Global Hotel Booking Powered by Dapps.  No Middlemen. 0% Commission. No Advertising Fees.
 Use Paradise Token to go on an annual holiday and travel around the world. The liquidity of the PDT will be maintained by integration with the exchange market and continuous work on the value of the product.
 We have >120.000 hotels plus restaurants and any kind of entertainment.You simply will be able to use our country list or the Largest Hotel Chains and make booking. Pay for the  holidays  using Paradise Token. No third party, no commission. Direct booking on the hotels website.
 We are part of Intercontex Group. Our partners are the biggest group hotels in the world. (Hilton,Marriott,Wyndham,IHG,Jumeirah,Kempinski,Loews Hotels,RIU Hotels,Tokyu Hotels,Langham Hospitality Group and more).
