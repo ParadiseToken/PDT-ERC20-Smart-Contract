@@ -634,7 +634,7 @@ contract ParadiseTokenSale is Pausable {
      * Returns the current time.
      * Useful to abstract calls to "now" for tests.
     */
-    function currentTime() constant public returns (uint _currentTime) {
+    function currentTime() view public returns (uint _currentTime) {
         return now;
     }
 }
@@ -649,21 +649,17 @@ interface IERC20 {
   event Approval(address indexed owner, address indexed spender, uint256 value);
 }
 
-/**
- * @title ParadiseToken initial distribution
- * @dev Distribute airdrop tokens
- */
+   /**
+    * @title ParadiseToken initial distribution
+    * @dev Distribute airdrop tokens
+    */
  
-contract PDTDistribution is Ownable {
-  function drop(IERC20 token, address[] recipients, uint256[] values) public {
+ contract PDTDistribution is Ownable {
+  
+  function drop(IERC20 token, address[] recipients, uint256[] values) public onlyOwner {
     for (uint256 i = 0; i < recipients.length; i++) {
       token.transfer(recipients[i], values[i]);
     }
-  }
-
-  modifier onlyOwner() {
-    require(msg.sender == owner);
-    _;
   }
 }
 
