@@ -436,6 +436,8 @@ contract ParadiseTokenSale is Pausable {
 
     // Keeps track of the amount of wei raised
     uint public amountRaised;
+    // amount that has been refunded so far
+    uint public refundAmount; 
 
     // The ratio of PDT to Ether
     uint public rate;
