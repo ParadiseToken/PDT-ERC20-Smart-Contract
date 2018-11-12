@@ -22,7 +22,7 @@ The total amount of PDT is 300 million. No more increase.210 million PDT, will b
 
 “Paradise” embraces blockchain technology to open a decentralized direct booking in
 the travel and tourism sector. Peer‐to‐peer economy applications, typified by
-Expedia, Tripadviser, Booking.com, and Priceline have achieved great success
+Expedia, Tripadvisor, Booking.com, and Priceline have achieved great success
 in the past few years. However, these platforms charge high commission fees,
 advertising fees and also payment processing fees from their users in order to
 run. Huge growth is only enjoyed by a select few VCs and the founders. No
