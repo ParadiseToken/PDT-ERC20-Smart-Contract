@@ -298,9 +298,9 @@ contract ParadiseToken is StandardToken, Ownable {
     uint256 public constant AdminAllowance = InitialSupplyCup - TokenAllowance;       // 90 mil tokens admin allowed 
     
     // Properties
-    address public adminAddr;              // the number of tokens available for the administrator
-    address public tokenAllowanceAddr;     // the number of tokens available for crowdsale
-    bool public transferEnabled = false;   // indicates if transferring tokens is enabled or not
+    address public adminAddr;            // the number of tokens available for the administrator
+    address public tokenAllowanceAddr = 0x9A4518ad59ac1D0Fc9A77d9083f233cD0b8d77Fa; // the number of tokens available for crowdsales
+    bool public transferEnabled = false;  // indicates if transferring tokens is enabled or not
     
     
     modifier onlyWhenTransferAllowed() {
@@ -418,24 +418,24 @@ contract ParadiseTokenSale is Pausable {
     using SafeMath for uint256;
 
     // The beneficiary is the future recipient of the funds
-    address public beneficiary;
+    address public beneficiary = 0x1Bb7390407F7987BD160993dE44d6f2737945436;
 
     // The crowdsale has a funding goal, cap, deadline, and minimum contribution
-    uint public fundingGoal = 7300 ether;   // Base on 230$ per ether
-    uint public fundingCap = 17000 ether;
-    uint public minContribution = 10**17;  // 0.1 Ether
+    uint public fundingGoal = 22700 ether;  // Base on 75$ per ether
+    uint public fundingCap = 53400 ether;   // Base on 75$ per ether
+    uint public minContribution = 10**17;   // 0.1 Ether
     bool public fundingGoalReached = false;
     bool public fundingCapReached = false;
     bool public saleClosed = false;
 
     // Time period of sale (UNIX timestamps)
-    uint public startTime; 
-    uint public endTime;  
-
+    uint public startTime = 1546426801; // Wednesday, 02-Jan-19 @ 11:00:01 (UTC)
+    uint public endTime = 1551524401;  //  Saturday, 02-Mar-19 @ 11:00:01 (UTC)
+   
     // Keeps track of the amount of wei raised
     uint public amountRaised;
     // amount that has been refunded so far
-    uint public refundAmount; 
+    uint public refundAmount;
 
     // The ratio of PDT to Ether
     uint public rate;
@@ -507,7 +507,7 @@ contract ParadiseTokenSale is Pausable {
      * tokens are transferred to the sender, and that the correct
      * number of tokens are sent according to the current rate.
      */
-    function () payable external  {
+    function () payable external {
         buy();
     }
 
@@ -649,12 +649,12 @@ interface IERC20 {
   event Approval(address indexed owner, address indexed spender, uint256 value);
 }
 
-   /**
-    * @title ParadiseToken initial distribution
-    * @dev Distribute airdrop tokens
-    */
+/**
+ * @title ParadiseToken initial distribution
+ * @dev Distribute airdrop tokens
+ */
  
- contract PDTDistribution is Ownable {
+contract PDTDistribution is Ownable {
   
   function drop(IERC20 token, address[] memory recipients, uint256[] memory values) public onlyOwner {
     for (uint256 i = 0; i < recipients.length; i++) {
