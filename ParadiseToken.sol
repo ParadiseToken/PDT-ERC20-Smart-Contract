@@ -429,8 +429,8 @@ contract ParadiseTokenSale is Pausable {
     bool public saleClosed = false;
 
     // Time period of sale (UNIX timestamps)
-    uint public startTime = 1546426801; // Wednesday, 02-Jan-19 @ 11:00:01 (UTC)
-    uint public endTime = 1551524401;  //  Saturday, 02-Mar-19 @ 11:00:01 (UTC)
+    uint public startTime = 1547031675; // Wednesday, 09-Jan-19 @ 11:01:15 am (UTC)
+    uint public endTime = 1552129275;  //  Saturday, 09-Mar-19 @ 11:01:15 am (UTC)
    
     // Keeps track of the amount of wei raised
     uint public amountRaised;
